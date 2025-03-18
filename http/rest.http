@@ -1,12 +1,12 @@
-GET http://localhost:8000/posts
+GET http://localhost:8001/posts
 
 ###
 
-GET http://localhost:8000/posts/1
+GET http://localhost:8001/posts/1
 
 ###
 
-POST http://localhost:8000/posts
+POST http://localhost:8001/posts
 Content-Type: application/json
 
 {
@@ -16,7 +16,7 @@ Content-Type: application/json
 
 ###
 
-PUT http://localhost:8000/posts/3 
+PUT http://localhost:8001/posts/3 
 Content-Type: application/json
 
 {
@@ -26,4 +26,4 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:8000/posts/1
+DELETE http://localhost:8001/posts/1

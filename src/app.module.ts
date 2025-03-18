@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { PostsModule } from './posts/posts.module';
 import { ConfigModule } from '@nestjs/config';
 import * as Joi from '@hapi/joi';
+import { DatabaseModule } from './database/database.module';
 
 @Module({
   imports: [PostsModule, ConfigModule.forRoot({
@@ -15,7 +16,9 @@ import * as Joi from '@hapi/joi';
       POSTGRES_DB: Joi.string().required(),
       PORT: Joi.number(),
     })
-  })],
+  }),
+  DatabaseModule
+],
   controllers: [AppController],
   providers: [AppService],
 })
