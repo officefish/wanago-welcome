@@ -2,6 +2,7 @@ services:
   postgres:
     container_name: postgres
     image: postgres:latest
+    restart: always
     ports:
     - "5432:5432"      
     volumes:
@@ -25,7 +26,16 @@ services:
     networks:
     - postgres
 
-  
+  app:
+    container_name: wanago-welcome
+    build: .
+    restart: always
+    depends_on:
+      - postgres
+    env_file:
+    - .env
+    networks:
+      - postgres
 
 networks:
   postgres:
