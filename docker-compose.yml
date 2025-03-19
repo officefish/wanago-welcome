@@ -27,15 +27,19 @@ services:
     - postgres
 
   app:
-    container_name: wanago-welcome
+    container_name: nestjs_app
     build: .
     restart: always
     depends_on:
       - postgres
-    env_file:
-    - .env
+    environment:
+      - PORT=${PORT}
+    ports:
+      - '8001:8001'
     networks:
       - postgres
+
+  
 
 networks:
   postgres:
